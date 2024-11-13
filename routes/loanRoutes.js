@@ -1,17 +1,4 @@
 // routes/loanRoutes.js
-<<<<<<< HEAD
-const express = require('express');
-const router = express.Router();
-const loanController = require('../controllers/loanController');
-
-router.get('/loans', loanController.getAllLoans);
-router.get('/loans/:id', loanController.getLoanById);
-router.post('/loans', loanController.createLoan);
-router.put('/loans/:id', loanController.updateLoan);
-router.delete('/loans/:id', loanController.deleteLoan);
-
-module.exports = router;
-=======
 import express from 'express';
 import {
   getAllLoans,
@@ -39,4 +26,3 @@ router.put('/loans/:id', updateLoan);
 router.delete('/loans/:id', deleteLoan);
 
 export default router;
->>>>>>> fallou
