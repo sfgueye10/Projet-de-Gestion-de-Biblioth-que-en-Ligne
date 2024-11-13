@@ -1,6 +1,5 @@
 import jwt from 'jsonwebtoken';
-//Cle
-
+//Cle Validation 
 const secretKey = process.env.JWT_SECRET || 'Falilou1';
 
 export const authenticateToken = (req, res, next) => {
