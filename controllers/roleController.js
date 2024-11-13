@@ -2,7 +2,7 @@ import { check, validationResult } from 'express-validator';
 import db from '../models/index.js'; 
 const Role = db.Role;
 
-// Récupérer tous les rôles
+// Recupérer tous les rôles
 export const getAllRoles = async (req, res) => {
   try {
     const roles = await Role.findAll();
