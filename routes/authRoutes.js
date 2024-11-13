@@ -1,20 +1,19 @@
-<<<<<<< HEAD
-// routes/authRoutes.js
-const express = require('express');
-const router = express.Router();
-const authController = require('../controllers/authController');
-
-router.post('/login', authController.login);
-
-module.exports = router;
-=======
+// routes/authorRoutes.js
 import express from 'express';
-import { register, login } from '../controllers/authController.js';
+import {
+  getAllAuthors,
+  getAuthorById,
+  createAuthor,
+  updateAuthor,
+  deleteAuthor,
+} from '../controllers/authorController.js';
 
 const router = express.Router();
 
-router.post('/register', register);
-router.post('/login', login);
+router.get('/authors', getAllAuthors);
+router.get('/authors/:id', getAuthorById);
+router.post('/authors', createAuthor);
+router.put('/authors/:id', updateAuthor);
+router.delete('/authors/:id', deleteAuthor);
 
 export default router;
->>>>>>> fallou
