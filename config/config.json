@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "development": {
     "dialect": "sqlite",
     "storage": "./database.sqlite"
@@ -12,3 +13,13 @@
     "storage": "./database.sqlite"
   }
 }
+=======
+    "development": {
+      "username": "root",
+      "password": "",
+      "database": "express_orm",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    }
+}   
+>>>>>>> fallou
