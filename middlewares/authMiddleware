@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken';
+//Cle
 
 const secretKey = process.env.JWT_SECRET || 'Falilou1';
 
