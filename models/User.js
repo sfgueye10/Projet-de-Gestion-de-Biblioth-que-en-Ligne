@@ -1,8 +1,11 @@
 // models/User.js
-const bcrypt = require('bcryptjs');
-
-module.exports = (sequelize, DataTypes) => {
+export default (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
+    userID: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -16,19 +19,16 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    role: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    roleID: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Roles',
+        key: 'roleID',
+      }
     },
+  }, {
+    timestamps: false,
   });
-
-  User.beforeCreate(async (user) => {
-    user.password = await bcrypt.hash(user.password, 10);
-  });
-
-  User.associate = (models) => {
-    User.hasMany(models.Loan);
-  };
 
   return User;
 };

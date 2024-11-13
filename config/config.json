@@ -1,14 +1,9 @@
 {
-  "development": {
-    "dialect": "sqlite",
-    "storage": "./database.sqlite"
-  },
-  "test": {
-    "dialect": "sqlite",
-    "storage": ":memory:"
-  },
-  "production": {
-    "dialect": "sqlite",
-    "storage": "./database.sqlite"
-  }
-}
+    "development": {
+      "username": "root",
+      "password": "",
+      "database": "express_orm",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    }
+}   

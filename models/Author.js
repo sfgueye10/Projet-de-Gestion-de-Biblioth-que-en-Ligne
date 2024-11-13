@@ -1,19 +1,21 @@
 // models/Author.js
-module.exports = (sequelize, DataTypes) => {
+export default (sequelize, DataTypes) => {
   const Author = sequelize.define('Author', {
+    authorID: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    biography: {
+    bio: {
       type: DataTypes.TEXT,
-      allowNull: true,
     },
+  }, {
+    timestamps: false,
   });
-
-  Author.associate = (models) => {
-    Author.hasMany(models.Book);
-  };
 
   return Author;
 };

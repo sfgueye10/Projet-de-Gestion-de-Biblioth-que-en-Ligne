@@ -1,20 +1,38 @@
-// models/Loan.js Emprunt
-module.exports = (sequelize, DataTypes) => {
+// models/Loan.js
+export default (sequelize, DataTypes) => {
   const Loan = sequelize.define('Loan', {
+    loanID: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     loanDate: {
       type: DataTypes.DATE,
       allowNull: false,
     },
+    dueDate: {
+      type: DataTypes.DATE,
+    },
     returnDate: {
       type: DataTypes.DATE,
-      allowNull: true,
     },
+    bookID: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Books',
+        key: 'bookID',
+      }
+    },
+    userID: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Users',
+        key: 'userID',
+      }
+    },
+  }, {
+    timestamps: false,
   });
-
-  Loan.associate = (models) => {
-    Loan.belongsTo(models.User);
-    Loan.belongsTo(models.Book);
-  };
 
   return Loan;
 };

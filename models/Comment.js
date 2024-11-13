@@ -1,24 +1,34 @@
 // models/Comment.js
-module.exports = (sequelize, DataTypes) => {
+export default (sequelize, DataTypes) => {
     const Comment = sequelize.define('Comment', {
+      commentID: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+      },
       content: {
         type: DataTypes.TEXT,
-        allowNull: false,
       },
-      userId: {
+      date: {
+        type: DataTypes.DATE,
+      },
+      bookID: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        references: {
+          model: 'Books',
+          key: 'bookID',
+        }
       },
-      bookId: {
+      userID: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        references: {
+          model: 'Users',
+          key: 'userID',
+        }
       },
+    }, {
+      timestamps: false,
     });
-  
-    Comment.associate = (models) => {
-      Comment.belongsTo(models.User, { foreignKey: 'userId' });
-      Comment.belongsTo(models.Book, { foreignKey: 'bookId' });
-    };
   
     return Comment;
   };

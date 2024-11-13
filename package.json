@@ -1,21 +1,24 @@
 {
-  "name": "bibliotheque-en-ligne",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "express-validator": "^7.2.0",
     "jsonwebtoken": "^9.0.2",
-    "sequelize": "^6.37.5",
-    "sequelize-cli": "^6.6.2",
-    "sqlite3": "^5.1.7"
-  }
+    "mysql2": "^3.11.4",
+    "promise-mysql": "^5.2.0",
+    "sequelize": "^6.37.5"
+  },
+  "name": "bibliotheque_en_ligne",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
