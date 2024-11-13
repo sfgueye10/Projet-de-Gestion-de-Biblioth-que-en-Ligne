@@ -2,7 +2,7 @@ import { check, validationResult } from 'express-validator';
 import db from '../models/index.js'; 
 const Book = db.Book;
 
-// Récupérer tous les livres
+// Récuperer tous les livres
 export const getAllBooks = async (req, res) => {
   try {
     const books = await Book.findAll();
