@@ -1,3 +1,4 @@
+//Importation 
 import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
@@ -33,7 +34,7 @@ app.use('/api/auth', authRoutes);
 
 
 
-// Synchroniser les modèles avec la base de données
+// Synchronisation des modèles avec la base de données
 db.sequelize.sync({ force: false }).then(() => {
   console.log('Tables synchronisées.');
   app.listen(port, () => {
