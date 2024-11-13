@@ -1,8 +1,4 @@
 // models/Book.js
-<<<<<<< HEAD
-module.exports = (sequelize, DataTypes) => {
-  const Book = sequelize.define('Book', {
-=======
 export default (sequelize, DataTypes) => {
   const Book = sequelize.define('Book', {
     bookID: {
@@ -10,36 +6,18 @@ export default (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true,
     },
->>>>>>> fallou
     title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-<<<<<<< HEAD
-    isbn: {
-=======
     publicationDate: {
       type: DataTypes.DATE,
     },
     ISBN: {
->>>>>>> fallou
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
     },
-<<<<<<< HEAD
-    publicationDate: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
-  });
-
-  Book.associate = (models) => {
-    Book.belongsTo(models.Author);
-    Book.hasMany(models.Loan);
-  };
-
-=======
     summary: {
       type: DataTypes.TEXT,
     },
@@ -61,6 +39,5 @@ export default (sequelize, DataTypes) => {
     timestamps: false,
   });
 
->>>>>>> fallou
   return Book;
 };
